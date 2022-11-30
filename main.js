@@ -23,6 +23,7 @@ changeForm.addEventListener('change', () => {
         document.getElementById(`icon-check-${dato}`).classList.add('icon-validation-error');
         document.getElementById(`icon-check-${dato}`).classList.add('fa-circle-xmark');
         document.getElementById(`${dato}-input`).classList.add('input-error');
+        document.getElementById(`${dato}-input`).classList.remove('input-correct');
     }
 
     const validationCorrect = (dato) => {
@@ -35,18 +36,19 @@ changeForm.addEventListener('change', () => {
 
 
     /* VALIDACIONES */
-    if (usuario === "") {
+    if (!usuario) {
         messageUser.innerHTML = "*Ingrese un nombre de usuario";
         validationError("user");
     } else if (expreRegulares.eUserName.test(usuario) == false) {
-        messageUser.innerHTML = "*El usuario solo puede contener números, letras y guion bajo.";
+        messageUser.innerHTML = "*El usuario solo puede contener números, letras y guion bajo. (4 - 16caracteres)";
         validationError("user");
     } else {
         messageUser.innerHTML = "";
         validationCorrect("user");
     }
 
-    if (nombre === "") {
+
+    if (!nombre) {
         messageName.innerHTML = "*Ingrese un nombre en el recuadro";
         validationError("name");
     } else if (expreRegulares.eName.test(nombre) == false) {
@@ -57,7 +59,7 @@ changeForm.addEventListener('change', () => {
         validationCorrect("name");
     }
 
-    if (contraseña === "") {
+    if (!contraseña) {
         messagePass.innerHTML = "*Ingrese una contraseña";
         validationError("pass");
     } else if (expreRegulares.ePassword.test(contraseña) == false) {
@@ -68,23 +70,25 @@ changeForm.addEventListener('change', () => {
         validationCorrect("pass");
     }
 
-    if (repetirContraseña !== contraseña) {
-        messageRPass.innerHTML = "*Las contraseñas ingresadas no coinciden.";
-        validationError('rpass');
-    } else if (repetirContraseña == "") {
+
+    if (!repetirContraseña) {
         messageRPass.innerHTML = "*Repita su contraseña.";
         validationError("rpass");
+
+    } else if (repetirContraseña !== contraseña) {
+        messageRPass.innerHTML = "*Las contraseñas ingresadas no coinciden.";
+        validationError('rpass');
     }
     else {
         messageRPass.innerHTML = "";
         validationCorrect('rpass');
     }
 });
-
 document.getElementById('button-send').addEventListener('click', (e) => {
-    e.preventDefault()
-    alert("registro exitoso");
+    alert('Si los datos enviados son correctos, el usuario será registrado')
 })
+
+
 
 
 

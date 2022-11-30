@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+
+<body class="body">
+    <main class="main">
+        <form action="" id="change-form" class="formulario">
+            <h2 class="title-form"> VALIDACION DE FORMULARIO</h2>
+            <div class="formulario__user-container">
+                <label for="">Usuario</label>
+                <div>
+                    <input type="text" id="user-input" class="input-form" placeholder="JeanF97">
+                    <div><i class="fa-solid" id="icon-check-user"></i></div>
+                </div>
+                <p id="message-user"></p>
+            </div>
+
+            <div class="formulario__name-container">
+                <label for="">Nombre</label>
+                <div>
+                    <input type="text" id="name-input" class="input-form" placeholder="Pepito Perez">
+                    <div><i class="fa-solid" id="icon-check-name"></i></div>
+
+                </div>
+                <p id="message-name"></p>
+            </div>
+
+            <div class="formulario__pass-container">
+                <label for="">Contraseña</label>
+                <div>
+                    <input type="password" id="pass-input" class="input-form" placeholder="********">
+                    <div><i class="fa-solid" id="icon-check-pass"></i></div>
+                </div>
+                <p id="message-pass"></p>
+            </div>
+
+            <div class="formulario__rpass-container">
+                <label for="">Repetir Contraseña</label>
+                <div><input type="password" id="rpass-input" class="input-form" placeholder="********">
+                    <div><i class="fa-solid" id="icon-check-rpass"></i></div>
+                </div>
+                <p id="message-repeat-pass"></p>
+            </div>
+
+            <div class="space-2"></div>
+
+            <div class="button-container">
+                <input type="submit" value="Registrarse" id="button-send">
+            </div>
+
+            <div class="space"></div>
+        </form>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
